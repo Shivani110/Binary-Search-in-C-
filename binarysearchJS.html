@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+</body>
+<script>
+function Binary_Search(a, beg, end, b)
+{
+
+	if (end >= beg)
+	{
+		let mid = beg+ Math.floor((end-beg) / 2);
+
+		if (a[mid] == b)
+			return mid;
+
+		if (a[mid] > b)
+			return Binary_Search(a, beg, mid-1, b);
+
+		return Binary_Search(a, mid+1 , end, b);
+	}
+
+	return -1;
+}
+
+let a  = [ 20,35,49,65,70 ];
+let b = 65;
+let n = a.length
+let r = Binary_Search(a, 0, n - 1, b);
+(r == -1) ? document.write( "Element is not present in array")
+				: document.write("Element is present at index " +r);
+</script>
+</body>
+</html>
